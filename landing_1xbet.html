@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deviens Sous-Affilié 1xBet avec Adolphe</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { margin:0; font-family: 'Roboto', sans-serif; background:#f0f2f5; color:#333; }
+header { background: linear-gradient(135deg,#1a73e8,#ff6600); color:#fff; padding:60px 20px; text-align:center; }
+header h1 { font-size:3em; margin-bottom:15px; text-shadow:2px 2px rgba(0,0,0,0.3); }
+header p { font-size:1.2em; max-width:700px; margin:auto; text-shadow:1px 1px rgba(0,0,0,0.2); }
+.container { max-width:1000px; margin:40px auto; background:#fff; border-radius:20px; padding:40px; box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+h2 { color:#ff6600; margin-bottom:15px; text-align:center; }
+p { line-height:1.6; font-size:16px; text-align:center; }
+form { display:flex; flex-direction:column; max-width:500px; margin:20px auto; }
+input, select { padding:15px; margin:8px 0; border-radius:10px; border:1px solid #ccc; font-size:16px; }
+button { padding:18px; font-size:20px; background:#ff6600; color:#fff; border:none; border-radius:10px; cursor:pointer; transition:0.3s; }
+button:hover { background:#e65500; }
+.features { display:flex; flex-wrap:wrap; justify-content:space-around; margin-top:40px; gap:20px; }
+.feature { flex:1 1 280px; background:#f5f5f5; border-radius:15px; padding:25px; text-align:center; transition:transform 0.3s; }
+.feature:hover { transform:translateY(-10px); }
+.feature h3 { color:#1a73e8; margin-bottom:10px; }
+.ads-section { display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:40px; }
+.ad { flex:1 1 250px; margin:10px; text-align:center; opacity:0; transform:translateY(20px); transition: all 0.8s ease; }
+.ad.visible { opacity:1; transform:translateY(0); }
+.ad img { max-width:100%; border-radius:15px; }
+.ad p { margin-top:10px; font-weight:bold; }
+.faq { margin-top:40px; }
+.faq p { background:#f5f5f5; padding:15px; border-radius:10px; margin-bottom:10px; text-align:left; }
+.chart-container { margin-top:40px; }
+.counter { font-size:2.5em; color:#ff6600; font-weight:bold; margin:20px 0; text-align:center; }
+footer { text-align:center; padding:20px; color:#fff; background:#1a73e8; margin-top:50px; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Deviens Sous-Affilié 1xBet avec Adolphe</h1>
+<p>Rejoins mon équipe et commence à générer des revenus dès aujourd'hui. Je te guide pas à pas pour recruter tes joueurs et tes sous-affiliés.</p>
+</header>
+
+<div class="container">
+<h2>Inscris-toi maintenant</h2>
+<form id="affiliateForm">
+    <input type="text" id="name" name="name" placeholder="Ton nom complet" required>
+    <input type="email" id="email" name="email" placeholder="Ton email" required>
+    <select id="country" name="country" required>
+        <option value="">Sélectionne ton pays</option>
+        <option value="CM">Cameroun</option>
+        <option value="FR">France</option>
+        <option value="BE">Belgique</option>
+        <option value="CH">Suisse</option>
+        <option value="Other">Autre</option>
+    </select>
+    <input type="hidden" id="sub_affiliate" value="">
+    <button type="submit">Devenir sous-affilié</button>
+</form>
+
+<div class="features">
+    <div class="feature"><h3>Programme gratuit</h3><p>Inscription 100% gratuite. Commence à gagner dès l’inscription des joueurs.</p></div>
+    <div class="feature"><h3>Commissions récurrentes</h3><p>Gagne un pourcentage sur tous les gains de tes joueurs et sous-affiliés.</p></div>
+    <div class="feature"><h3>Accompagnement personnalisé</h3><p>Je te guide étape par étape pour réussir rapidement.</p></div>
+</div>
+
+<div class="ads-section">
+    <div class="ad"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/1xbet-logo.png" alt="1xBet Logo"><p>Rejoins 1xBet maintenant !</p></div>
+    <div class="ad"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/1xbet-logo.png" alt="1xBet Promo"><p>Profite des meilleures commissions !</p></div>
+    <div class="ad"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/1xbet-logo.png" alt="1xBet Bonus"><p>Développe ton réseau et gagne plus !</p></div>
+</div>
+
+<div class="counter" id="totalGains">€0</div>
+<div class="chart-container"><canvas id="incomeChart" width="800" height="300"></canvas></div>
+
+<div class="faq">
+<h2>FAQ</h2>
+<p><strong>Q :</strong> Dois-je investir de l’argent ?<br><strong>R :</strong> Non, l’inscription est gratuite.</p>
+<p><strong>Q :</strong> Comment suivre mes gains et mes sous-affiliés ?<br><strong>R :</strong> Tout se fait via ton tableau de bord 1xPartners.</p>
+<p><strong>Q :</strong> Vais-je être accompagné ?<br><strong>R :</strong> Oui, je te guide personnellement pas à pas.</p>
+</div>
+</div>
+
+<footer>Contacte-moi : WhatsApp/Telegram +237 XXX XXX XXX | Email : tonemail@example.com</footer>
+
+<script>
+// Récupérer le paramètre sub de l'URL
+function getParameterByName(name) {
+    const url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\$&');
+    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+    const results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// Remplir automatiquement le champ caché avec l'ID du sous-affilié
+const subId = getParameterByName('sub');
+if(subId) {
+    document.getElementById('sub_affiliate').value = subId;
+}
+
+// Redirection au clic sur le bouton
+document.getElementById('affiliateForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const sub = document.getElementById('sub_affiliate').value;
+    window.location.href = `https://1xpartners.com/fr/registration?ref=591721&sub=${sub}`;
+});
+
+// Chart et compteur
+const ctx = document.getElementById('incomeChart').getContext('2d');
+new Chart(ctx,{type:'line',data:{labels:['Semaine 1','Semaine 2','Semaine 3','Semaine 4','Semaine 5'],datasets:[{label:'Gains potentiels (€)',data:[50,120,250,450,700],borderColor:'#ff6600',backgroundColor:'rgba(255,102,0,0.3)',fill:true,tension:0.4}]} ,options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+
+let total=0; let goal=700;
+function animateCounter(){ total+=5; if(total>goal) total=goal; document.getElementById('totalGains').textContent='€'+total; if(total<goal) requestAnimationFrame(animateCounter);}
+animateCounter();
+
+function checkAds(){ document.querySelectorAll('.ad').forEach(ad=>{ const rect=ad.getBoundingClientRect(); if(rect.top<window.innerHeight-50){ad.classList.add('visible');}});}
+window.addEventListener('scroll',checkAds); window.addEventListener('load',checkAds);
+</script>
+
+</body>
+</html>
